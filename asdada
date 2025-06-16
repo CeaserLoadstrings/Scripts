@@ -2732,15 +2732,21 @@ end
 
 function ragdoll()
     if game.PlaceId == 15546218972 or game.PlaceId == 6884319169 then
-        ReplicatedStorage:WaitForChild("RagdollEvent"):FireServer()
+        local args = {
+            [1] = "Ball"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Ragdoll"):FireServer(unpack(args))
     elseif game.PlaceId == 111294513233843 then
-        ReplicatedStorage:WaitForChild("RagdollEvent"):FireServer()
+        local args = {
+            [1] = "Ball"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Ragdoll"):FireServer(unpack(args))
     end
 end
 
 function unragdoll()
     if game.PlaceId == 15546218972 or game.PlaceId == 6884319169 then
-        ReplicatedStorage:WaitForChild("UnragdollEvent"):FireServer()
+        game:GetService("ReplicatedStorage"):WaitForChild("Unragdoll"):FireServer()
     end
 end
 
